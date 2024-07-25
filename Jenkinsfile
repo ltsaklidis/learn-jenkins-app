@@ -26,6 +26,7 @@ pipeline {
                 cat build/index.html
                 npm test
                 '''
+            }
         }
     }
 }
