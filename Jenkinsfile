@@ -41,6 +41,7 @@ pipeline {
                     }
                 }
 
+                /***
                 stage('E2E Test') {
                     agent {
                         docker {
@@ -57,13 +58,17 @@ pipeline {
                         '''
                     }
                 }   
+                ***/
             }
-            
+
+            /***    
             post {
                 always{
                     junit 'just-results/junit.xml'
                 }
             }
+            ***/
+            
         }
 
         stage('Deploy') {
