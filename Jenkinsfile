@@ -37,7 +37,7 @@ pipeline {
                 '''
             }
         }
-        /**
+        
         stage('E2E') {
             agent {
                 docker {
@@ -54,14 +54,14 @@ pipeline {
                 '''
             }
         }
-        **/
+        
     }
 
-    /**
+    
     post {
         always{
             junit 'just-results/junit.xml'
         }
     }
-    */
+    
 }
