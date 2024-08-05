@@ -58,6 +58,12 @@ pipeline {
                     }
                 }   
             }
+            
+            post {
+                always{
+                    junit 'just-results/junit.xml'
+                }
+            }
         }
 
         stage('Deploy') {
@@ -72,12 +78,6 @@ pipeline {
                     npm install netlify-cli -g
                     netlify --version
                 '''
-            }
-        }
-
-        post {
-            always{
-                junit 'just-results/junit.xml'
             }
         }
     }
